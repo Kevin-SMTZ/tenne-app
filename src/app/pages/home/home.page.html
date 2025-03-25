@@ -1,0 +1,69 @@
+<ion-content class="ion-padding">
+  <div class="tenne-logo">
+    <img src="assets/logo/tenne-logo.png" alt="Tenne Logo" />
+  </div>
+
+  <h1 class="welcome">Willkommen in der <span class="highlight">Tenne</span></h1>
+  <p class="subtitle">Gemütlich. Lecker. Lokal.</p>
+
+  <!-- Öffnungszeiten -->
+  <ion-card class="opening-hours-card">
+    <ion-card-header>
+      <ion-card-title>
+        <ion-icon name="time-outline"></ion-icon>
+        <span>Öffnungszeiten</span>
+      </ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <div class="opening-hours">
+        <h3>Freitag & Samstag</h3>
+        <p>Frühstück: 9:00 – 13:00 Uhr</p>
+        <p>Abends: 17:00 – 23:00 Uhr</p>
+  
+        <h3>Sonntag</h3>
+        <p>Durchgehend: 9:00 – 21:30 Uhr</p>
+        <p><em>Hausgemachter Kuchen am Nachmittag 🍰</em></p>
+  
+        <h3>Warme Küche</h3>
+        <p>Freitag – Sonntag: 18:00 – 21:00 Uhr</p>
+      </div>
+    </ion-card-content>
+  </ion-card>
+  
+
+  <!-- Nächstes Event -->
+  <ng-container *ngIf="nextEvent; else noEvent">
+    <ion-card class="info-card">
+      <ion-card-header>
+        <ion-card-title>
+          <ion-icon name="calendar-outline"></ion-icon>
+          <span>Nächstes Event</span>
+        </ion-card-title>
+      </ion-card-header>
+      <ion-card-content>
+        <div class="event-info">
+          <h3>{{ nextEvent.title }}</h3>
+          <p>{{ nextEvent.date | date: 'EEEE, dd. MMMM · HH:mm':'':'de' }} Uhr</p>
+        </div>
+      </ion-card-content>
+    </ion-card>
+  </ng-container>
+
+  <ng-template #noEvent>
+    <ion-card class="info-card">
+      <ion-card-header>
+        <ion-card-title>
+          <ion-icon name="calendar-outline"></ion-icon>
+          <span>Nächstes Event</span>
+        </ion-card-title>
+      </ion-card-header>
+      <ion-card-content>
+        <div class="event-info">
+          <p>Derzeit ist kein Event geplant.<br />Schau bald wieder vorbei!</p>
+        </div>
+      </ion-card-content>
+    </ion-card>
+  </ng-template>
+
+  
+</ion-content>

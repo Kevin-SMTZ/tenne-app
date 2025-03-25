@@ -1,0 +1,116 @@
+.welcome {
+    font-family: 'Roboto Slab', serif;
+    font-size: 1.8rem;
+    margin-top: 1rem;
+    text-align: center;
+  }
+  
+  .highlight {
+    color: var(--ion-color-primary);
+  }
+  
+  .subtitle {
+    text-align: center;
+    font-style: italic;
+    color: #666;
+    margin-bottom: 1.5rem;
+  }
+  
+  .opening-card {
+    margin-bottom: 1rem;
+  }
+  
+  ion-card-title ion-icon {
+    vertical-align: middle;
+    margin-right: 8px;
+    font-size: 1.2em;
+  }
+  
+  .tenne-logo {
+    display: flex;
+    justify-content: center;
+    margin-top: 1rem;
+  }
+  
+  .tenne-logo img {
+    max-width: 150px;
+    border-radius: 1rem;
+  }
+
+  /* Öffnungszeiten-Karte */
+  .opening-hours-card {
+    margin-bottom: 1.2rem;
+  
+    ion-card-title {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 1.2rem;
+      font-weight: 600;
+      color: var(--ion-color-primary);
+    }
+  
+    ion-icon {
+      font-size: 20px;
+      color: var(--ion-color-primary);
+    }
+  
+    .opening-hours {
+      padding: 0.25rem 0;
+  
+      h3 {
+        margin: 1rem 0 0.4rem 0;
+        font-size: 1.05rem;
+        color: #222;
+      }
+  
+      p {
+        margin: 0;
+        font-size: 0.95rem;
+        color: #444;
+      }
+  
+      em {
+        color: #2E8B57;
+        font-style: normal;
+        font-weight: 500;
+      }
+    }
+  }
+  
+  
+  /* Event-Karte */
+  .info-card {
+    margin-bottom: 1.2rem;
+  
+    ion-card-title {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 1.2rem;
+      font-weight: 600;
+      color: var(--ion-color-primary);
+    }
+  
+    ion-icon {
+      font-size: 20px;
+      color: var(--ion-color-primary);
+    }
+  
+    .event-info {
+      padding: 0.25rem 0;
+  
+      h3 {
+        margin: 0 0 0.3rem 0;
+        font-size: 1.1rem;
+        color: #222;
+      }
+  
+      p {
+        margin: 0;
+        font-size: 0.95rem;
+        color: #444;
+      }
+    }
+  }
+  
