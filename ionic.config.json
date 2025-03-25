@@ -1,0 +1,7 @@
+{
+  "name": "tenne-app",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular-standalone"
+}
