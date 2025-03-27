@@ -1,7 +1,7 @@
 import { Component, inject, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
-import { IonContent, IonCard, IonCardHeader, IonCardTitle, IonCardContent, IonIcon, IonItem, IonLabel } from '@ionic/angular/standalone';
+import { IonContent, IonCard, IonCardHeader, IonCardTitle, IonCardContent, IonIcon, IonItem, IonLabel, IonTitle, IonHeader, IonToolbar } from '@ionic/angular/standalone';
 import { addIcons } from 'ionicons';
 import { cafeOutline, beerOutline, calendarOutline, timeOutline } from 'ionicons/icons';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
@@ -11,7 +11,7 @@ import { HttpClient, HttpClientModule } from '@angular/common/http';
   templateUrl: './home.page.html',
   styleUrls: ['./home.page.scss'],
   standalone: true,
-  imports: [IonLabel, IonItem, IonIcon, IonCardContent, IonCardTitle, IonCardHeader, IonCard, IonContent, CommonModule, FormsModule, HttpClientModule]
+  imports: [IonToolbar, IonHeader, IonTitle, IonLabel, IonItem, IonIcon, IonCardContent, IonCardTitle, IonCardHeader, IonCard, IonContent, CommonModule, FormsModule, HttpClientModule]
 })
 
 export class HomePage implements OnInit{

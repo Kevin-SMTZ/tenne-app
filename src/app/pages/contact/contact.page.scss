@@ -1,40 +1,52 @@
-.kontakt-title {
-    font-family: 'Roboto Slab', serif;
-    text-align: center;
-    font-size: 1.8rem;
-    margin-bottom: 1.5rem;
+ion-toolbar {
+    --background: var(--ion-color-primary);
+    --color: var(--ion-color-light);
+    padding-top: 12px;
+    padding-bottom: 12px;
+  }
+  
+  .logo-container {
+    display: flex;
+    justify-content: center;
+    margin: 24px 0 12px;
+  
+    img {
+      height: 56px;
+      object-fit: contain;
+    }
+  }
+  
+  ion-card-title {
+    font-weight: bold;
+    font-size: 1.1rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+  
+  .contact-card {
+    margin-bottom: 20px;
+  }
+  
+  ion-card-content p {
+    margin: 4px 0;
+  }
+  
+  a {
+    text-decoration: none;
     color: var(--ion-color-primary);
   }
   
-  .kontakt-card {
-    ion-card-title {
-      font-size: 1.2rem;
-      font-weight: 600;
-      color: var(--ion-color-primary);
-      display: flex;
-      align-items: center;
-      gap: 8px;
+  /* Dark Mode */
+  @media (prefers-color-scheme: dark) {
+    a {
+      color: var(--ion-color-light);
     }
   
-    ion-icon {
-      font-size: 20px;
-      color: var(--ion-color-primary);
-    }
-  
-    ion-label {
-      font-size: 1rem;
-      color: #333;
-    }
-  
-    ion-item {
-      --background: transparent;
+    .logo-container {
+      img {
+        filter: brightness(1.1);
+      }
     }
   }
-
-  ion-button {
-    margin-top: 1rem;
-    font-weight: 600;
-    letter-spacing: 0.5px;
-  }
-  
   

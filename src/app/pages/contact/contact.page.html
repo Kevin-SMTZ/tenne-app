@@ -1,48 +1,47 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-title>Kontakt & Anfahrt</ion-title>
+  </ion-toolbar>
+</ion-header>
+
 <ion-content class="ion-padding">
-  <h1 class="kontakt-title">Kontakt & Anfahrt</h1>
+  <div class="logo-container">
+    <img src="assets/logo/tenne-logo.png" alt="Tenne Logo" />
+  </div>
 
   <!-- Anfahrt -->
-  <ion-card class="kontakt-card">
+  <ion-card class="contact-card">
     <ion-card-header>
-      <ion-card-title><ion-icon name="location-outline"></ion-icon> Anfahrt</ion-card-title>
+      <ion-card-title>
+        <ion-icon name="location-outline"></ion-icon> Anfahrt
+      </ion-card-title>
     </ion-card-header>
     <ion-card-content>
-      <ion-item lines="none">
-        <ion-label>
-          Annastraße 103<br />
-          41372 Niederkrüchten
-        </ion-label>
-      </ion-item>
-        <ion-button
-          expand="block"
-          color="primary"
-          fill="outline"
-          shape="round"
-          href="https://www.google.com/maps/dir/?api=1&destination=Annastraße+103,+41372+Niederkrüchten"
-          target="_blank"
-        >
+      <p>Annastraße 103</p>
+      <p>41372 Niederkrüchten</p>
+      <ion-button expand="block" fill="outline" color="primary" href="https://www.google.com/maps/dir/?api=1&destination=Annastraße+103,+41372+Niederkrüchten" target="_blank">
         <ion-icon name="navigate-outline" slot="start"></ion-icon>
         Route planen
       </ion-button>
-
     </ion-card-content>
   </ion-card>
 
   <!-- Kontakt -->
-  <ion-card class="kontakt-card">
+  <ion-card class="contact-card">
     <ion-card-header>
-      <ion-card-title><ion-icon name="call-outline"></ion-icon> Kontakt</ion-card-title>
+      <ion-card-title>
+        <ion-icon name="call-outline"></ion-icon> Kontakt
+      </ion-card-title>
     </ion-card-header>
     <ion-card-content>
-      <ion-item lines="none">
-        <ion-icon name="mail-outline" slot="start"></ion-icon>
-        <ion-label>office&#64;tenne-treff.de</ion-label>
-      </ion-item>
-
-      <ion-item lines="none">
-        <ion-icon name="call" slot="start"></ion-icon>
-        <ion-label>02163 349 003 9</ion-label>
-      </ion-item>
+      <p>
+        <strong>E-Mail:</strong><br />
+        <a href="mailto:office@tenne-treff.de">office&#64;tenne-treff.de</a>
+      </p>
+      <p>
+        <strong>Telefon:</strong><br />
+        <a href="tel:+4921633490039">02163 349 003 9</a>
+      </p>
     </ion-card-content>
   </ion-card>
 </ion-content>

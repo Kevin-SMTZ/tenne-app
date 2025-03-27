@@ -1,69 +1,73 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <!---<ion-title size="large">Willkommen</ion-title>--->
+  </ion-toolbar>
+</ion-header>
+
 <ion-content class="ion-padding">
-  <div class="tenne-logo">
+  <!-- Logo unterhalb der Toolbar -->
+  <div class="logo-container">
     <img src="assets/logo/tenne-logo.png" alt="Tenne Logo" />
   </div>
 
-  <h1 class="welcome">Willkommen in der <span class="highlight">Tenne</span></h1>
-  <p class="subtitle">Gemütlich. Lecker. Lokal.</p>
+  <div class="intro">
+    <p class="subtitle">Gemütlich. Lecker. Lokal.</p>
+  </div>
 
   <!-- Öffnungszeiten -->
-  <ion-card class="opening-hours-card">
+  <ion-card class="event-card">
     <ion-card-header>
       <ion-card-title>
-        <ion-icon name="time-outline"></ion-icon>
-        <span>Öffnungszeiten</span>
+        <ion-icon name="time-outline"></ion-icon> Öffnungszeiten
       </ion-card-title>
     </ion-card-header>
     <ion-card-content>
-      <div class="opening-hours">
-        <h3>Freitag & Samstag</h3>
-        <p>Frühstück: 9:00 – 13:00 Uhr</p>
-        <p>Abends: 17:00 – 23:00 Uhr</p>
-  
-        <h3>Sonntag</h3>
-        <p>Durchgehend: 9:00 – 21:30 Uhr</p>
-        <p><em>Hausgemachter Kuchen am Nachmittag 🍰</em></p>
-  
-        <h3>Warme Küche</h3>
-        <p>Freitag – Sonntag: 18:00 – 21:00 Uhr</p>
-      </div>
+      <p><strong>Freitag & Samstag</strong></p>
+      <p>Frühstück: 9:00 – 13:00 Uhr</p>
+      <p>Abends: 17:00 – 23:00 Uhr</p>
+
+      <p><strong>Sonntag</strong></p>
+      <p>Durchgehend: 9:00 – 21:30 Uhr</p>
+      <p class="highlight">Hausgemachter Kuchen am Nachmittag 🍰</p>
+
+      <p><strong>Warme Küche</strong></p>
+      <p>Freitag – Sonntag: 18:00 – 21:00 Uhr</p>
     </ion-card-content>
   </ion-card>
-  
 
   <!-- Nächstes Event -->
   <ng-container *ngIf="nextEvent; else noEvent">
-    <ion-card class="info-card">
+    <ion-card class="event-card">
       <ion-card-header>
         <ion-card-title>
-          <ion-icon name="calendar-outline"></ion-icon>
-          <span>Nächstes Event</span>
+          <ion-icon name="calendar-outline"></ion-icon> Nächstes Event
         </ion-card-title>
       </ion-card-header>
       <ion-card-content>
-        <div class="event-info">
-          <h3>{{ nextEvent.title }}</h3>
-          <p>{{ nextEvent.date | date: 'EEEE, dd. MMMM · HH:mm':'':'de' }} Uhr</p>
-        </div>
+        <ion-item lines="none">
+          <ion-label>
+            <h3>{{ nextEvent.title }}</h3>
+            <p>{{ nextEvent.date | date: 'EEEE, dd. MMMM · HH:mm':'':'de' }}</p>
+          </ion-label>
+        </ion-item>
       </ion-card-content>
     </ion-card>
   </ng-container>
 
   <ng-template #noEvent>
-    <ion-card class="info-card">
+    <ion-card class="event-card">
       <ion-card-header>
         <ion-card-title>
-          <ion-icon name="calendar-outline"></ion-icon>
-          <span>Nächstes Event</span>
+          <ion-icon name="calendar-outline"></ion-icon> Nächstes Event
         </ion-card-title>
       </ion-card-header>
       <ion-card-content>
-        <div class="event-info">
-          <p>Derzeit ist kein Event geplant.<br />Schau bald wieder vorbei!</p>
-        </div>
+        <ion-item lines="none">
+          <ion-label>
+            <p>Derzeit ist kein Event geplant.<br />Schau bald wieder vorbei!</p>
+          </ion-label>
+        </ion-item>
       </ion-card-content>
     </ion-card>
   </ng-template>
-
-  
 </ion-content>

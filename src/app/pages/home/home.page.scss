@@ -1,116 +1,57 @@
-.welcome {
-    font-family: 'Roboto Slab', serif;
-    font-size: 1.8rem;
-    margin-top: 1rem;
-    text-align: center;
+ion-toolbar {
+    --background: var(--ion-color-primary);
+    --color: var(--ion-color-light);
+    padding-top: 12px;
+    padding-bottom: 12px;
   }
   
-  .highlight {
-    color: var(--ion-color-primary);
+  .logo-container {
+    display: flex;
+    justify-content: center;
+    margin: 24px 0 12px;
+  
+    img {
+      height: 56px;
+      object-fit: contain;
+    }
   }
   
   .subtitle {
     text-align: center;
     font-style: italic;
-    color: #666;
-    margin-bottom: 1.5rem;
+    margin: 0 0 24px;
+    color: var(--ion-color-medium);
   }
   
-  .opening-card {
-    margin-bottom: 1rem;
-  }
-  
-  ion-card-title ion-icon {
-    vertical-align: middle;
-    margin-right: 8px;
-    font-size: 1.2em;
-  }
-  
-  .tenne-logo {
+  ion-card-title {
+    font-weight: bold;
+    font-size: 1.1rem;
     display: flex;
-    justify-content: center;
-    margin-top: 1rem;
+    align-items: center;
+    gap: 0.5rem;
   }
   
-  .tenne-logo img {
-    max-width: 150px;
-    border-radius: 1rem;
-  }
-
-  /* Öffnungszeiten-Karte */
-  .opening-hours-card {
-    margin-bottom: 1.2rem;
-  
-    ion-card-title {
-      display: flex;
-      align-items: center;
-      gap: 8px;
-      font-size: 1.2rem;
-      font-weight: 600;
-      color: var(--ion-color-primary);
-    }
-  
-    ion-icon {
-      font-size: 20px;
-      color: var(--ion-color-primary);
-    }
-  
-    .opening-hours {
-      padding: 0.25rem 0;
-  
-      h3 {
-        margin: 1rem 0 0.4rem 0;
-        font-size: 1.05rem;
-        color: #222;
-      }
-  
-      p {
-        margin: 0;
-        font-size: 0.95rem;
-        color: #444;
-      }
-  
-      em {
-        color: #2E8B57;
-        font-style: normal;
-        font-weight: 500;
-      }
-    }
+  ion-card-content p {
+    margin: 4px 0;
   }
   
+  .highlight {
+    color: var(--ion-color-success);
+    font-weight: 500;
+  }
   
-  /* Event-Karte */
-  .info-card {
-    margin-bottom: 1.2rem;
+  .event-card {
+    margin-bottom: 20px;
+  }
   
-    ion-card-title {
-      display: flex;
-      align-items: center;
-      gap: 8px;
-      font-size: 1.2rem;
-      font-weight: 600;
-      color: var(--ion-color-primary);
+  /* Dark Mode */
+  @media (prefers-color-scheme: dark) {
+    .subtitle {
+      color: var(--ion-color-step-600);
     }
   
-    ion-icon {
-      font-size: 20px;
-      color: var(--ion-color-primary);
-    }
-  
-    .event-info {
-      padding: 0.25rem 0;
-  
-      h3 {
-        margin: 0 0 0.3rem 0;
-        font-size: 1.1rem;
-        color: #222;
-      }
-  
-      p {
-        margin: 0;
-        font-size: 0.95rem;
-        color: #444;
-      }
+    .highlight {
+      color: var(--ion-color-tertiary);
     }
   }
   
