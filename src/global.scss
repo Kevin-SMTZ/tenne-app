@@ -9,6 +9,8 @@
  * https://ionicframework.com/docs/layout/global-stylesheets
  */
 
+ @use './theme/variables' as *;
+
 /* Core CSS required for Ionic components to work properly */
 @import "@ionic/angular/css/core.css";
 
@@ -36,8 +38,86 @@
 /* @import "@ionic/angular/css/palettes/dark.class.css"; */
 @import '@ionic/angular/css/palettes/dark.system.css';
 
+
+
+html,
 body {
-    font-family: 'Roboto Slab', serif;
+  font-family: var(--ion-font-family);
+  font-size: var(--font-size-base);
+  color: var(--ion-text-color);
+  background-color: var(--ion-background-color);
+}
+
+h1 {
+  font-size: var(--font-size-xlarge);
+  font-weight: bold;
+  margin-bottom: 0.5em;
+  color: var(--ion-text-color);
+}
+
+h2 {
+  font-size: var(--font-size-large);
+  font-weight: 600;
+  margin-bottom: 0.5em;
+  color: var(--ion-text-color);
+}
+
+h3 {
+  font-size: var(--font-size-medium);
+  font-weight: 500;
+  margin-bottom: 0.4em;
+  color: var(--ion-text-color);
+}
+
+p,
+ion-label {
+  font-size: var(--font-size-base);
+  color: var(--ion-text-color);
+}
+
+ion-card {
+  margin: 1rem;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+ion-toolbar {
+  background-color: var(--ion-toolbar-background);
+  color: var(--ion-toolbar-color);
+  padding: 12px 16px;
+  --padding-top: 12px;
+  --padding-bottom: 12px;
+  --padding-start: 16px;
+  --padding-end: 16px;
+}
+
+ion-content {
+  --background: var(--ion-background-color);
+}
+
+/* Dark Mode */
+@media (prefers-color-scheme: dark) {
+  html,
+  body {
+    background-color: var(--ion-background-color-dark);
+    color: var(--ion-text-color-dark);
   }
 
-  
+  h1, h2, h3, p, ion-label {
+    color: var(--ion-text-color-dark);
+  }
+
+  ion-toolbar {
+    background-color: var(--ion-toolbar-background-dark);
+    color: var(--ion-toolbar-color-dark);
+  }
+
+  ion-content {
+    --background: var(--ion-background-color-dark);
+  }
+
+  ion-card {
+    background-color: #1e1e1e;
+    color: var(--ion-text-color-dark);
+  }
+}

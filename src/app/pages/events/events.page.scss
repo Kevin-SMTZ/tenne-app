@@ -1,0 +1,31 @@
+ion-toolbar {
+    --background: var(--ion-color-primary);
+    --color: var(--ion-color-light);
+    padding: 12px 16px;
+    font-size: 1.2rem;
+  }
+  
+  ion-content {
+    --background: var(--ion-background-color);
+  }
+  
+  ion-card {
+    margin-bottom: 20px;
+    border-radius: 12px;
+  
+    ion-card-title {
+      font-size: 1.1rem;
+      font-weight: 600;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      color: var(--ion-color-primary);
+    }
+  
+    ion-card-content {
+      font-size: 0.95rem;
+      line-height: 1.6;
+      color: var(--ion-text-color);
+    }
+  }
+  

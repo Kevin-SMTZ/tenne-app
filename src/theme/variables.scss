@@ -1,27 +1,68 @@
-// For information on how to create your own theme, please see:
-// http://ionicframework.com/docs/theming/
-
 :root {
-    /* Basisfarben */
-    --ion-color-primary: #2e8b57;
+    // Tenne Farben
+    --ion-color-primary: #2E8B57;
     --ion-color-primary-rgb: 46, 139, 87;
     --ion-color-primary-contrast: #ffffff;
     --ion-color-primary-contrast-rgb: 255, 255, 255;
     --ion-color-primary-shade: #297c4e;
-    --ion-color-primary-tint: #43986a;
+    --ion-color-primary-tint: #43976b;
   
-    --ion-color-secondary: #5260ff;
-    --ion-color-tertiary: #50c8ff;
-    --ion-color-success: #2dd36f;
-    --ion-color-warning: #ffc409;
-    --ion-color-danger: #eb445a;
-    --ion-color-light: #f4f5f8;
-    --ion-color-medium: #92949c;
-    --ion-color-dark: #222428;
+    --ion-color-secondary: #4a5568;
+    --ion-color-secondary-rgb: 74, 85, 104;
+    --ion-color-secondary-contrast: #ffffff;
+    --ion-color-secondary-contrast-rgb: 255, 255, 255;
+    --ion-color-secondary-shade: #414b5c;
+    --ion-color-secondary-tint: #5b6477;
   
-    /* Optional: Tabs-Hintergrund */
-    --ion-tab-bar-background: #ffffff;
-    --ion-tab-bar-color: var(--ion-color-primary);
-    --ion-tab-bar-color-selected: var(--ion-color-primary);
+    --ion-color-tertiary: #f4a261;
+    --ion-color-tertiary-rgb: 244, 162, 97;
+    --ion-color-tertiary-contrast: #000000;
+    --ion-color-tertiary-contrast-rgb: 0, 0, 0;
+    --ion-color-tertiary-shade: #d99455;
+    --ion-color-tertiary-tint: #f5ac70;
+  
+    --ion-color-light: #f4f4f4;
+    --ion-color-light-rgb: 244, 244, 244;
+    --ion-color-light-contrast: #000000;
+    --ion-color-light-contrast-rgb: 0, 0, 0;
+    --ion-color-light-shade: #d7d7d7;
+    --ion-color-light-tint: #f5f5f5;
+  
+    --ion-color-medium: #a3a3a3;
+    --ion-color-medium-rgb: 163, 163, 163;
+    --ion-color-medium-contrast: #000000;
+    --ion-color-medium-contrast-rgb: 0, 0, 0;
+    --ion-color-medium-shade: #8f8f8f;
+    --ion-color-medium-tint: #acacac;
+  
+    --ion-color-dark: #1f1f1f;
+    --ion-color-dark-rgb: 31, 31, 31;
+    --ion-color-dark-contrast: #ffffff;
+    --ion-color-dark-contrast-rgb: 255, 255, 255;
+    --ion-color-dark-shade: #1b1b1b;
+    --ion-color-dark-tint: #353535;
+  
+    // Schriftarten
+    --ion-font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  
+    // Schriftgrößen
+    --font-size-small: 0.875rem;
+    --font-size-base: 1rem;
+    --font-size-medium: 1.125rem;
+    --font-size-large: 1.25rem;
+    --font-size-xlarge: 1.5rem;
+  
+    // Standard Textfarben
+    --ion-text-color: #222;
+    --ion-text-color-rgb: 34, 34, 34;
+    --ion-background-color: #ffffff;
+    --ion-toolbar-background: var(--ion-color-primary);
+    --ion-toolbar-color: var(--ion-color-primary-contrast);
+  
+    // Dark Mode Textfarben
+    --ion-text-color-dark: #f4f4f4;
+    --ion-background-color-dark: #121212;
+    --ion-toolbar-background-dark: #1f1f1f;
+    --ion-toolbar-color-dark: #ffffff;
   }
   
