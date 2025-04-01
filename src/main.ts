@@ -8,17 +8,35 @@ import { AppComponent } from './app/app.component';
 import { registerLocaleData } from '@angular/common';
 import localeDe from '@angular/common/locales/de';
 import { importProvidersFrom } from '@angular/core';
-import { HttpClientModule } from '@angular/common/http';
+
+
+import { provideFirebaseApp, initializeApp } from '@angular/fire/app';
+import { provideFirestore, getFirestore } from '@angular/fire/firestore';
+import { provideAppCheck, initializeAppCheck, ReCaptchaV3Provider } from '@angular/fire/app-check';
+
+import { environment } from './environments/environment';
+
+import { IonicStorageModule } from '@ionic/storage-angular';
+
 
 registerLocaleData(localeDe);
-
 
 bootstrapApplication(AppComponent, {
   providers: [
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy },
     provideIonicAngular(),
-    importProvidersFrom(HttpClientModule), // ✅ HINZUFÜGEN
+    importProvidersFrom(IonicStorageModule.forRoot()),
     provideRouter(routes, withPreloading(PreloadAllModules)),
-    
+    // Firebase und Firestore
+    provideFirebaseApp(() => initializeApp(environment.firebase)),
+    provideFirestore(() => getFirestore()),
+    /*provideAppCheck(() =>
+      initializeAppCheck(undefined, {
+        provider: new ReCaptchaV3Provider('6LckwAYrAAAAAF8H277L-MkwX6XKhPAc6GeAK4au'),
+        isTokenAutoRefreshEnabled: true,
+      })
+    )*/
   ],
 });
+
+

@@ -1,49 +1,32 @@
-import { Component, OnInit } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
-import { LocalNotifications } from '@capacitor/local-notifications';
+import { Component, inject, OnInit } from '@angular/core';
 import { IonHeader, IonIcon, IonButton, IonContent, IonTitle, IonToolbar, IonCard, IonCardHeader, IonItem, IonLabel, IonCardContent, IonCardTitle, IonCardSubtitle } from "@ionic/angular/standalone";
 import { CommonModule } from '@angular/common';
 import { addIcons } from 'ionicons';
 import { heartOutline, heart } from 'ionicons/icons';
-import { EventNotificationService } from 'src/app/services/eventnotificationservice/event-notification.service';
+import { FirebaseService } from 'src/app/services/firebase/firebase.service';
+import { LocalStorageService } from 'src/app/services/localstorage/localstorage.service';
 
 @Component({
   selector: 'app-events',
   templateUrl: './events.page.html',
   styleUrls: ['./events.page.scss'],
   standalone: true,
-  imports: [IonCardSubtitle, IonCardTitle, IonCardContent, IonLabel, IonItem, IonCardHeader, IonCard, IonHeader, IonIcon, IonButton, IonContent, IonTitle, IonToolbar, CommonModule, IonIcon ]
+  imports: [IonCardSubtitle, IonCardTitle, IonCardContent, IonContent, IonCardHeader, IonCard, IonHeader, IonTitle, IonToolbar, CommonModule ],
 })
 export class EventsPage implements OnInit {
-  events: any[] = [];
-  reminderEventIds: Set<number> = new Set();
+  private firebaseService = inject(FirebaseService);
+  private localStorage = inject(LocalStorageService);
 
-  constructor(
-    private http: HttpClient,
-    private notificationService: EventNotificationService
-  ) {addIcons({heart,"heart-outline": heartOutline});}
+  events: any[] = [];
+  reminderEventIds: Set<string> = new Set();
+
+  constructor(){    }
 
   ngOnInit() {
-    this.loadEvents();
-  }
 
-  loadEvents() {
-    this.http.get<any[]>('/assets/events.json').subscribe((data) => {
-      this.events = data;
+    this.firebaseService.getUpcomingEvents().then((events) => {
+      this.events = events;
     });
   }
 
-  toggleReminder(event: any) {
-    if (this.reminderEventIds.has(event.id)) {
-      this.reminderEventIds.delete(event.id);
-      //this.notificationService.cancelEventNotification(event.id);
-    } else {
-      this.reminderEventIds.add(event.id);
-      //this.notificationService.scheduleEventNotification(event);
-    }
-  }
-
-  isEventReminderSet(event: any): boolean {
-    return this.reminderEventIds.has(event.id);
-  }
 }
