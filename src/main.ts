@@ -12,7 +12,6 @@ import { importProvidersFrom } from '@angular/core';
 
 import { provideFirebaseApp, initializeApp } from '@angular/fire/app';
 import { provideFirestore, getFirestore } from '@angular/fire/firestore';
-import { provideAppCheck, initializeAppCheck, ReCaptchaV3Provider } from '@angular/fire/app-check';
 
 import { environment } from './environments/environment';
 
@@ -27,15 +26,9 @@ bootstrapApplication(AppComponent, {
     provideIonicAngular(),
     importProvidersFrom(IonicStorageModule.forRoot()),
     provideRouter(routes, withPreloading(PreloadAllModules)),
-    // Firebase und Firestore
     provideFirebaseApp(() => initializeApp(environment.firebase)),
     provideFirestore(() => getFirestore()),
-    /*provideAppCheck(() =>
-      initializeAppCheck(undefined, {
-        provider: new ReCaptchaV3Provider('6LckwAYrAAAAAF8H277L-MkwX6XKhPAc6GeAK4au'),
-        isTokenAutoRefreshEnabled: true,
-      })
-    )*/
+
   ],
 });
 
