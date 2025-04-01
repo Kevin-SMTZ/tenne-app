@@ -14,19 +14,16 @@ import { LocalStorageService } from 'src/app/services/localstorage/localstorage.
   imports: [IonCardSubtitle, IonCardTitle, IonCardContent, IonContent, IonCardHeader, IonCard, IonHeader, IonTitle, IonToolbar, CommonModule ],
 })
 export class EventsPage implements OnInit {
-  private firebaseService = inject(FirebaseService);
   private localStorage = inject(LocalStorageService);
 
   events: any[] = [];
-  reminderEventIds: Set<string> = new Set();
 
-  constructor(){    }
 
-  ngOnInit() {
+  constructor() {}
 
-    this.firebaseService.getUpcomingEvents().then((events) => {
-      this.events = events;
-    });
+  async ngOnInit() {
+    const cachedEvents = await this.localStorage.get('cached_events');
+    this.events = cachedEvents || [];
   }
 
 }
