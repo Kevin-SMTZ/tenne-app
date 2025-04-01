@@ -5,40 +5,31 @@ import { IonContent, IonCard, IonCardHeader, IonCardTitle, IonCardContent, IonIc
 import { addIcons } from 'ionicons';
 import { cafeOutline, beerOutline, calendarOutline, timeOutline } from 'ionicons/icons';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { LocalStorageService } from 'src/app/services/localstorage/localstorage.service';
 
 @Component({
   selector: 'app-home',
   templateUrl: './home.page.html',
   styleUrls: ['./home.page.scss'],
   standalone: true,
-  imports: [IonTitle, IonToolbar, IonHeader, IonIcon, IonCardContent, IonCardTitle, IonCardHeader, IonCard, IonContent, CommonModule, FormsModule, HttpClientModule]
+  imports: [IonTitle, IonToolbar, IonHeader, IonIcon, IonCardContent, IonCardTitle, IonCardHeader, IonCard, IonContent, CommonModule, FormsModule, IonLabel, IonItem]
 })
 
 export class HomePage implements OnInit{
-  private http = inject(HttpClient);
-
-  nextEvent: any = null;
-
+  private localStorageService = inject(LocalStorageService);
+  nextEvent: any;
   constructor() {
     addIcons({timeOutline,calendarOutline,cafeOutline,beerOutline});
-    this.loadNextEvent();
   }
-  ngOnInit(){ }
 
-  loadNextEvent() {
-    this.http.get<any[]>('assets/events.json').subscribe((events) => {
+  async ngOnInit() {
+    const events = await this.localStorageService.get('cached_events');
+    if (Array.isArray(events)) {
       const now = new Date();
-  
-      const upcoming = events
-        .map((event) => ({
-          ...event,
-          dateObj: new Date(event.date),
-        }))
-        .filter((e) => e.dateObj >= now)
-        .sort((a, b) => a.dateObj.getTime() - b.dateObj.getTime());
-  
-      this.nextEvent = upcoming[0] || null;
-    });
+      this.nextEvent = events
+        .filter((e: any) => new Date(e.date) > now)
+        .sort((a: any, b: any) => new Date(a.date).getTime() - new Date(b.date).getTime())[0];
+    }
   }
 }
 

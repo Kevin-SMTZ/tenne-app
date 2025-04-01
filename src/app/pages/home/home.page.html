@@ -23,29 +23,37 @@
     </ion-card-content>
   </ion-card>
 
-  <ng-container *ngIf="nextEvent; else noEvent">
-    <ion-card class="event-card">
-      <ion-card-header>
-        <ion-card-title>
-          <ion-icon name="calendar-outline"></ion-icon> Nächstes Event
-        </ion-card-title>
-      </ion-card-header>
-      <ion-card-content>
-        <h3>{{ nextEvent.title }}</h3>
-        <p>{{ nextEvent.date | date: 'EEEE, dd. MMMM · HH:mm':'':'de' }}</p>
-      </ion-card-content>
-    </ion-card>
-  </ng-container>
+  <ion-card class="event-card" *ngIf="nextEvent; else noEvent">
+    <ion-card-header>
+      <ion-card-title>
+        <ion-icon name="calendar-outline"></ion-icon>
+        Nächstes Event
+      </ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <ion-item lines="none">
+        <ion-label>
+          <h3>{{ nextEvent.title }}</h3>
+          <p>{{ nextEvent['date'] | date: 'EEEE, dd. MMMM · HH:mm':'':'de' }}</p>
+        </ion-label>
+      </ion-item>
+    </ion-card-content>
+  </ion-card>
 
   <ng-template #noEvent>
     <ion-card class="event-card">
       <ion-card-header>
         <ion-card-title>
-          <ion-icon name="calendar-outline"></ion-icon> Nächstes Event
+          <ion-icon name="calendar-outline"></ion-icon>
+          Nächstes Event
         </ion-card-title>
       </ion-card-header>
       <ion-card-content>
-        <p>Derzeit ist kein Event geplant.<br />Schau bald wieder vorbei!</p>
+        <ion-item lines="none">
+          <ion-label>
+            <p>Derzeit ist kein Event geplant.<br />Schau bald wieder vorbei!</p>
+          </ion-label>
+        </ion-item>
       </ion-card-content>
     </ion-card>
   </ng-template>
