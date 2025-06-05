@@ -41,7 +41,7 @@ export class FirebaseService {
       const diffInMs = now.getTime() - lastFetched.getTime();
       const diffInHours = diffInMs / (1000 * 60 * 60);
 
-      if (diffInHours < 1) {
+      if (diffInHours < 0.01) {
         return cachedData;
       }
     }

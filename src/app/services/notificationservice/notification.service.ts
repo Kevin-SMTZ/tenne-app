@@ -31,19 +31,28 @@ export class NotificationService {
     await LocalNotifications.schedule({
       notifications: [
         {
-          id: Number(event.id + '1'),
+          id: this.createNumericId(event.id, 1),
           title: 'Erinnerung: ' + event.title,
           body: 'Morgen ist das Event!',
           schedule: { at: oneDayBefore },
         },
         {
-          id: Number(event.id + '2'),
+          id: this.createNumericId(event.id, 2),
           title: 'Nicht vergessen: ' + event.title,
           body: 'In einer Stunde geht es los!',
           schedule: { at: oneHourBefore },
         },
       ],
     });
+  }
+
+  private createNumericId(id: string, offset: number): number {
+    let hash = 0;
+    for (const char of id) {
+      hash = (hash << 5) - hash + char.charCodeAt(0);
+      hash |= 0; // Convert to 32bit integer
+    }
+    return Math.abs(hash) * 10 + offset;
   }
 
   async cancelAllNotifications() {
