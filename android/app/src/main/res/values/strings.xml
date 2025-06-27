@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">tis</string>
+    <string name="title_activity_main">tis</string>
+    <string name="package_name">ionic.tis</string>
+    <string name="custom_url_scheme">ionic.tis</string>
+</resources>

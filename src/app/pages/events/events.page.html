@@ -1,0 +1,15 @@
+<ion-content>
+  <div class="ion-padding">
+    <div class="event-card" *ngFor="let event of events">
+      <h2>{{ event.title }}</h2>
+      <p class="event-date" *ngIf="event.date?.toDate">
+        {{ event.date.toDate() | date:'dd.MM.yyyy' }} | ab {{ event.date.toDate() | date:'HH:mm' }} Uhr
+      </p>
+      <p class="event-description">{{ event.description }}</p>
+    </div>
+
+    <div *ngIf="events.length === 0" class="no-events">
+      <p>Keine kommenden Events gefunden.</p>
+    </div>
+  </div>
+</ion-content>

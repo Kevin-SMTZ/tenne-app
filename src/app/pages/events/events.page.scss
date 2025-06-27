@@ -1,0 +1,38 @@
+ion-content {
+  background-color: var(--ion-background-color);
+}
+
+.event-card {
+  background: #ffffff;
+  border-radius: 12px;
+  padding: 1rem 1.2rem;
+  margin-bottom: 1.2rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+
+  h2 {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: var(--ion-color-primary);
+    margin: 0 0 0.4rem;
+  }
+
+  .event-date {
+    font-size: 0.95rem;
+    color: var(--ion-color-secondary);
+    margin-bottom: 0.6rem;
+  }
+
+  .event-description {
+    font-size: 1rem;
+    color: var(--ion-text-color);
+    margin: 0;
+     white-space: pre-line;
+  }
+}
+
+.no-events {
+  text-align: center;
+  color: var(--ion-color-medium);
+  font-size: 1.1rem;
+  padding-top: 2rem;
+}
