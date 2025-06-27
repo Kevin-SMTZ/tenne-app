@@ -1,8 +1,8 @@
 import type { CapacitorConfig } from '@capacitor/cli';
 
 const config: CapacitorConfig = {
-  appId: 'ionic.tis',
-  appName: 'tis',
+  appId: 'de.tenne.tis',
+  appName: 'Tenne',
   webDir: 'www'
 };
 

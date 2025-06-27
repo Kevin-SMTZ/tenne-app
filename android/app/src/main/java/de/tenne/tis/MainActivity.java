@@ -1,4 +1,4 @@
-package ionic.tis;
+package de.tenne.tis;
 
 import com.getcapacitor.BridgeActivity;
 
